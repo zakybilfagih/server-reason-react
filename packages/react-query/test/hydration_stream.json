@@ -1,0 +1,485 @@
+{
+  "resolved": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "resolved", 1 ],
+          "queryHash": "[\"resolved\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "server data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ],
+    "later": []
+  },
+  "pending": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "pending", 1 ],
+          "queryHash": "[\"pending\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "pending", 1 ],
+          "queryHash": "[\"pending\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "server data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  },
+  "stale": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "stale", 1 ],
+          "queryHash": "[\"stale\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "stale", 1 ],
+          "queryHash": "[\"stale\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "server data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  },
+  "failing": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "failing", 1 ],
+          "queryHash": "[\"failing\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "failing", 1 ],
+          "queryHash": "[\"failing\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 1,
+            "errorUpdatedAt": "<now>",
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "error",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  },
+  "retried": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "retried", 1 ],
+          "queryHash": "[\"retried\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "retried", 1 ],
+          "queryHash": "[\"retried\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 1,
+            "errorUpdatedAt": "<now>",
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "error",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  },
+  "infinite": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "infinite" ],
+          "queryHash": "[\"infinite\"]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          },
+          "queryType": "infinite"
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "infinite" ],
+          "queryHash": "[\"infinite\"]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": {
+              "pages": [ "page 0", "page 1" ],
+              "pageParams": [ 0, 1 ]
+            },
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          },
+          "queryType": "infinite"
+        }
+      ]
+    ]
+  },
+  "boundary": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "boundary", 1 ],
+          "queryHash": "[\"boundary\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "loader data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ],
+    "later": []
+  },
+  "existing": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "existing", 1 ],
+          "queryHash": "[\"existing\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "cached data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ],
+    "later": []
+  },
+  "in-flight": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "in-flight", 1 ],
+          "queryHash": "[\"in-flight\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "loader data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": []
+  },
+  "streamed": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "streamed", 1 ],
+          "queryHash": "[\"streamed\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "streamed", 1 ],
+          "queryHash": "[\"streamed\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "abc",
+            "dataUpdateCount": 4,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  },
+  "render-prefetch": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "render-prefetch", 1 ],
+          "queryHash": "[\"render-prefetch\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "render-prefetch", 1 ],
+          "queryHash": "[\"render-prefetch\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "server data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  },
+  "outlives": {
+    "shell": [
+      [
+        {
+          "queryKey": [ "outlives", 1 ],
+          "queryHash": "[\"outlives\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "dataUpdateCount": 0,
+            "dataUpdatedAt": 0.0,
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "pending",
+            "fetchStatus": "fetching"
+          }
+        }
+      ]
+    ],
+    "later": [
+      [
+        {
+          "queryKey": [ "outlives", 1 ],
+          "queryHash": "[\"outlives\",1]",
+          "dehydratedAt": "<now>",
+          "state": {
+            "data": "server data",
+            "dataUpdateCount": 1,
+            "dataUpdatedAt": "<now>",
+            "error": null,
+            "errorUpdateCount": 0,
+            "errorUpdatedAt": 0.0,
+            "fetchFailureCount": 0,
+            "fetchFailureReason": null,
+            "fetchMeta": null,
+            "isInvalidated": false,
+            "status": "success",
+            "fetchStatus": "idle"
+          }
+        }
+      ]
+    ]
+  }
+}

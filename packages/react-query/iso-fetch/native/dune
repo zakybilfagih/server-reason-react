@@ -1,0 +1,15 @@
+(library
+ (name iso_fetch_native)
+ (public_name server-reason-react.iso-fetch-native)
+ (optional)
+ (wrapped false)
+ (libraries
+  cohttp
+  cohttp-lwt
+  cohttp-lwt-unix
+  lwt
+  uri
+  server-reason-react.fetch
+  server-reason-react.js)
+ (preprocess
+  (pps lwt_ppx)))

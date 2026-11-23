@@ -1,0 +1,8 @@
+(library
+ (name iso_fetch_js)
+ (public_name server-reason-react.iso-fetch)
+ (modes melange)
+ (wrapped false)
+ (libraries melange-fetch melange.js)
+ (preprocess
+  (pps melange.ppx)))

@@ -1,0 +1,36 @@
+(rule
+ (alias runtest)
+ (action
+  (progn
+   (with-stdout-to
+    hydration_stream.out
+    (run %{exe:../native/test/hydration_stream.exe}))
+   (diff hydration_stream.json hydration_stream.out))))
+
+(rule
+ (alias runtest)
+ (action
+  (progn
+   (with-stdout-to
+    managers.out
+    (run %{exe:../native/test/managers.exe}))
+   (diff managers.json managers.out))))
+
+(rule
+ (alias runtest)
+ (action
+  (progn
+   (with-stdout-to
+    persist.out
+    (run %{exe:../native/test/persist.exe}))
+   (diff persist.json persist.out))))
+
+(melange.emit
+ (target js)
+ (alias react-query-hydration-test)
+ (modules HydrationQueries ManagersScenario PersistScenario)
+ (module_systems
+  (es6 js))
+ (libraries melange-json server-reason-react.react-query)
+ (preprocess
+  (pps melange.ppx)))

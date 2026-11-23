@@ -185,6 +185,11 @@ spec-check: ## Verify the committed React Flight fixtures (both directions) are 
 	cd $(flight_spec_dir) && NODE_ENV=production node --conditions react-server generate.mjs --check
 	cd $(flight_spec_dir) && NODE_ENV=production node reply/generate-reply.mjs --check
 
+.PHONY: react-query-check
+react-query-check: ## Compare the react-query stream with TanStack's dehydrate/hydrate (requires npm ci in demo/client)
+	$(DUNE) build --root . --profile=dev @packages/react-query/test/react-query-hydration-test
+	node --test packages/react-query/test/hydration.test.mjs packages/react-query/test/managers.test.mjs packages/react-query/test/persist.test.mjs
+
 container_name = server-reason-react-demo
 current_hash = $(shell git rev-parse HEAD | cut -c1-7)
 

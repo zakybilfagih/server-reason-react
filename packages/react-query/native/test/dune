@@ -1,0 +1,57 @@
+(test
+ (name test_react_query)
+ (modules test_react_query)
+ (deps hash_key.json)
+ (libraries
+  alcotest
+  lwt
+  lwt.unix
+  yojson
+  melange-json-native
+  server-reason-react.js
+  server-reason-react.react
+  server-reason-react.reactDom
+  server-reason-react.react-query-native)
+ (preprocess
+  (pps server-reason-react.ppx lwt_ppx)))
+
+(executable
+ (name hydration_stream)
+ (modules hydration_stream)
+ (libraries
+  lwt
+  lwt.unix
+  yojson
+  melange-json-native
+  server-reason-react.js
+  server-reason-react.react
+  server-reason-react.reactDom
+  server-reason-react.react-query-native)
+ (preprocess
+  (pps server-reason-react.ppx lwt_ppx)))
+
+(copy_files
+ (files ../../test/ManagersScenario.re))
+
+(executable
+ (name managers)
+ (modules managers ManagersScenario)
+ (libraries yojson server-reason-react.react-query-native)
+ (preprocess
+  (pps server-reason-react.ppx)))
+
+(copy_files
+ (files ../../test/PersistScenario.re))
+
+(executable
+ (name persist)
+ (modules persist PersistScenario)
+ (libraries
+  lwt
+  lwt.unix
+  yojson
+  melange-json-native
+  server-reason-react.js
+  server-reason-react.react-query-native)
+ (preprocess
+  (pps server-reason-react.ppx lwt_ppx)))

@@ -1,0 +1,11 @@
+(library
+ (name react_query_js)
+ (public_name server-reason-react.react-query)
+ (modes melange)
+ (wrapped false)
+ (libraries melange-fetch melange-json melange.js reason-react)
+ (preprocess
+  (pps melange.ppx reason-react-ppx)))
+
+(copy_files
+ (files ../shared/*.rei))

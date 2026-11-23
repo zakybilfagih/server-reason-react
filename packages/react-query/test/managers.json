@@ -1,0 +1,11 @@
+[
+  "focused true", "a false", "focused false", "a true", "setup", "a false",
+  "a false", "a true", "b true", "cleanup", "setup", "c false", "c false",
+  "cleanup", "setup without cleanup", "setup without cleanup",
+  "focused false", "focused true", "online true", "e false", "e true",
+  "online setup", "e false", "online false", "online cleanup",
+  "online setup", "f true", "online cleanup", "scheduled", "notify", "alone",
+  "inner batch done", "scheduled", "batch start", "notify", "first",
+  "notify", "nested", "notify", "called later", "batch end",
+  "batch returned 42", "empty batch done"
+]

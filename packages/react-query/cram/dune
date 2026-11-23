@@ -1,0 +1,7 @@
+(cram
+ (package server-reason-react)
+ (enabled_if
+  (>= %{ocaml_version} 5.4.0))
+ (deps
+  %{bin:refmt}
+  (package server-reason-react)))
