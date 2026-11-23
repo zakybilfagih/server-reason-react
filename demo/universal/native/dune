@@ -20,11 +20,14 @@
   str
   lwt
   lwt.unix
-  dream_router)
+  dream_router
+  server-reason-react.react-query-native
+  server-reason-react.iso-fetch-native)
  (wrapped false)
  (preprocess
   (pps
    lwt_ppx
+   melange-json-native.ppx
    melange_native_ppx
    server-reason-react.ppx
    -shared-folder-prefix=/native/shared/

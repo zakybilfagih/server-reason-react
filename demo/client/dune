@@ -15,7 +15,9 @@
   demo_hacker_news_router_js
   demo_shared_js
   demo_router_js
-  server-reason-react.router)
+  server-reason-react.router
+  server-reason-react.react-query
+  melange-json)
  (preprocess
   (pps ppx_platform -js reason-react-ppx melange.ppx)))
 
@@ -34,7 +36,8 @@
    "app/demo/client/RenderRoot.re.js"
    "app/demo/client/SinglePageRSC.re.js"
    "app/demo/client/RouterDemo.re.js"
-   "app/demo/client/ServerOnlyRSC.re.js")
+   "app/demo/client/ServerOnlyRSC.re.js"
+   "app/demo/client/SsrQuery.re.js")
   (source_tree node_modules)
   (file package.json)
   (source_tree ../../packages/esbuild-plugin))

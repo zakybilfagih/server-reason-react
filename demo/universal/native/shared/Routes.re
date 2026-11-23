@@ -6,6 +6,8 @@ let serverOnlyRSC = "/demo/serverOnlyRSC";
 let singlePageRSC = "/demo/singlePageRSC";
 let router = "/demo/router";
 let hackerNews = "/demo/hacker-news";
+let ssrQuery = "/demo/ssr-query";
+let ssrQueryApi = "/demo/ssr-query/api/notes";
 
 let links = [|
   (
@@ -42,6 +44,11 @@ let links = [|
     "hacker news",
     "A Hacker News reader with cached external data, server-rendered feeds and comments, URL search state, and light and dark themes.",
     hackerNews,
+  ),
+  (
+    "SSR with TanStack Query",
+    "Server side render into a stream with TanStack Query: queries resolve on the server inside Suspense, stream to the browser as dehydrated queries, and hydrate the client's QueryClient.",
+    ssrQuery,
   ),
 |];
 

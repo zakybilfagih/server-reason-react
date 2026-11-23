@@ -6,6 +6,10 @@
   "license": "ISC",
   "dependencies": {
     "@pedrobslisboa/react-client": "^19.1.0",
+    "@tanstack/query-sync-storage-persister": "^5.108.3",
+    "@tanstack/react-query": "^5.108.2",
+    "@tanstack/react-query-devtools": "^5.108.2",
+    "@tanstack/react-query-persist-client": "^5.108.3",
     "esbuild": "^0.21.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

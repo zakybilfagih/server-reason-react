@@ -52,6 +52,10 @@ let server =
       getAndPost(Routes.renderToStream, Examples.Comments.handler),
       getAndPost(Routes.singlePageRSC, Examples.SinglePageRSC.handler),
       getAndPost(Routes.serverOnlyRSC, Examples.ServerOnlyRSC.handler),
+      Dream.get(Routes.ssrQuery, Examples.SsrQuery.handler),
+      Dream.get(Routes.ssrQueryApi ++ "/:id", Examples.SsrQuery.api),
+      Dream.post(Routes.ssrQueryApi ++ "/:id", Examples.SsrQuery.rename),
+      Dream.get(SsrQueryDemo.pagesApi ++ "/:cursor", Examples.SsrQuery.page),
       ...List.concat([
            DreamRouter.routes(
              ~server=RouterRegistry.server,
@@ -99,5 +103,7 @@ let port = {
   | None => 8080
   };
 };
+
+IsoFetch.origin := "http://localhost:" ++ Int.to_string(port);
 
 Dream.run(~port, ~interface, server);

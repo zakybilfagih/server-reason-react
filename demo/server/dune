@@ -21,10 +21,14 @@
   str
   unix
   belt
-  yojson)
+  yojson
+  melange-json-native
+  server-reason-react.react-query-native
+  server-reason-react.iso-fetch-native)
  (preprocess
   (pps
    server-reason-react.ppx
    server-reason-react.melange_ppx
    server-reason-react.rsc-native.ppx
+   melange-json-native.ppx
    lwt_ppx)))
