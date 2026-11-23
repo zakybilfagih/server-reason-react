@@ -13,6 +13,7 @@
   melange-webapi
   melange-fetch
   demo_hacker_news_router_js
+  demo_kitchen_sink_js
   demo_shared_js
   demo_router_js
   server-reason-react.router

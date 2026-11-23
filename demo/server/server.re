@@ -57,6 +57,7 @@ let server =
       Dream.post(Routes.ssrQueryApi ++ "/:id", Examples.SsrQuery.rename),
       Dream.get(SsrQueryDemo.pagesApi ++ "/:cursor", Examples.SsrQuery.page),
       ...List.concat([
+           Demo_kitchen_sink_native.KsApi.routes,
            DreamRouter.routes(
              ~server=RouterRegistry.server,
              ~actionHandler=serverFunctionHandler,
@@ -80,6 +81,19 @@ let server =
                  <Demo_hacker_news_router_native.Pages.Document head>
                    children
                  </Demo_hacker_news_router_native.Pages.Document>,
+             (),
+           ),
+           DreamRouter.routes(
+             ~server=Demo_kitchen_sink_native.RouterRegistry.server,
+             ~actionHandler=serverFunctionHandler,
+             ~lookup=FunctionReferences.get,
+             ~ssr=shouldSSR,
+             ~bootstrapModules=["/static/demo/RouterDemo.re.js"],
+             ~document=
+               (~head, children) =>
+                 <Demo_kitchen_sink_native.Pages.Document head>
+                   children
+                 </Demo_kitchen_sink_native.Pages.Document>,
              (),
            ),
          ]),

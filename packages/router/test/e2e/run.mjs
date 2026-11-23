@@ -707,6 +707,46 @@ check("a shallow entry with an unreadable search asks the server", async ({ page
   return `navigation requests ${asked}, status ${JSON.stringify(statuses)}, page ${JSON.stringify(text)}, same as the document load (status ${documentResponse.status()})`;
 });
 
+check("request headers reach prefetches and navigations", async ({ page, origin }) => {
+  const base = `${origin}/demo/kitchen-sink/dashboard/invoices`;
+  await page.goto(`${base}/1`);
+  await ready(page, `a[href="/demo/kitchen-sink/dashboard/invoices/2"]`);
+  const sent = [];
+  page.on("request", (request) => {
+    const header = request.headers()["query-cache"];
+    if (!request.headers()["router-registry"]) return;
+    sent.push([
+      new URL(request.url()).pathname,
+      request.headers()["router-prefetch"] ?? "navigation",
+      header === undefined ? null : JSON.parse(decodeURIComponent(header)).sort(),
+    ]);
+  });
+  const queryHashes = (response) => response.text().then((body) => body.split("queryHash").length - 1);
+  const prefetched = prefetchOf(page, "/demo/kitchen-sink/dashboard/invoices/2", "intent");
+  await page.hover(`a[href="/demo/kitchen-sink/dashboard/invoices/2"]`);
+  const prefetchHashes = await queryHashes(await prefetched);
+  await page.click(`a[href="/demo/kitchen-sink/dashboard/invoices/2"]`);
+  await page.waitForFunction(() => document.querySelector("input[name=title]")?.defaultValue.startsWith("qui est es"));
+  await page.mouse.move(1200, 700);
+  const back = page.waitForResponse(
+    (response) =>
+      new URL(response.url()).pathname === "/demo/kitchen-sink/dashboard/invoices/1" &&
+      !response.request().headers()["router-prefetch"],
+  );
+  await page.evaluate(() => document.querySelector('a[href="/demo/kitchen-sink/dashboard/invoices/1"]').click());
+  const backHashes = await queryHashes(await back);
+  await page.waitForFunction(() => document.querySelector("input[name=title]")?.defaultValue.startsWith("sunt aut f"));
+  assert.deepEqual(sent[0], [
+    "/demo/kitchen-sink/dashboard/invoices/2",
+    "intent",
+    ['["invoice",1]', '["invoices"]'],
+  ]);
+  assert.deepEqual(sent.at(-1)[2], ['["invoice",1]', '["invoice",2]', '["invoices"]']);
+  assert.equal(prefetchHashes, 1, "the prefetch sent other queries than the uncached invoice");
+  assert.equal(backHashes, 0, "the server sent queries the browser has");
+  return `sent ${JSON.stringify(sent)}, prefetch queries ${prefetchHashes}, cached navigation queries ${backHashes}`;
+});
+
 const server = await startServer();
 const browser = await chromium.launch({ executablePath: await chromiumPath() });
 let failures = 0;

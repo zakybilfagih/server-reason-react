@@ -7,6 +7,7 @@ let singlePageRSC = "/demo/singlePageRSC";
 let router = "/demo/router";
 let hackerNews = "/demo/hacker-news";
 let ssrQuery = "/demo/ssr-query";
+let kitchenSink = "/demo/kitchen-sink";
 let ssrQueryApi = "/demo/ssr-query/api/notes";
 
 let links = [|
@@ -49,6 +50,11 @@ let links = [|
     "SSR with TanStack Query",
     "Server side render into a stream with TanStack Query: queries resolve on the server inside Suspense, stream to the browser as dehydrated queries, and hydrate the client's QueryClient.",
     ssrQuery,
+  ),
+  (
+    "TanStack Router kitchen sink with TanStack Query",
+    "TanStack Router's kitchen-sink-react-query example on the router: loaders prefetch TanStack queries on the server, pages read them with useSuspenseQuery, and mutations invalidate them.",
+    kitchenSink,
   ),
 |];
 
