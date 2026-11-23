@@ -75,6 +75,7 @@ type options = {
   interceptLinks: bool,
   viewTransitions: bool,
   onNavigationError: option(navigationError => unit),
+  requestHeaders: unit => list((string, string)),
 };
 
 [@mel.send]
@@ -104,6 +105,23 @@ let context: React.Context.t(option(contextValue)) =
 let provider = React.Context.provider(context);
 let outlet = (~owner, ~children, ()) =>
   <RouterOutlet key=owner owner> children </RouterOutlet>;
+
+let requestHeaders: React.Context.t(unit => list((string, string))) =
+  React.createContext(() => []);
+
+module RequestHeaders = {
+  let provider = React.Context.provider(requestHeaders);
+
+  [@react.component]
+  let make = (~value, ~children) =>
+    React.createElement(
+      provider,
+      {
+        "value": value,
+        "children": children,
+      },
+    );
+};
 
 let suspense = (~fallback, ~children, ()) =>
   <React.Suspense fallback> children </React.Suspense>;
@@ -282,16 +300,19 @@ module Provider = {
     let (viewTransition, _) = React.useState(RouterViewTransition.make);
     let announcer = React.useRef(None);
     let unloadAllowed = React.useRef(false);
+    let requestHeaders = React.useContext(requestHeaders);
     let options =
       React.useRef({
         interceptLinks,
         viewTransitions,
         onNavigationError,
+        requestHeaders,
       });
     options.current = {
       interceptLinks,
       viewTransitions,
       onNavigationError,
+      requestHeaders,
     };
     let (contentIdentityPrefix, _) =
       React.useState(RouterHistory.freshContentIdentity);
@@ -691,6 +712,7 @@ module Provider = {
             ~registryFingerprint,
             ~requestId,
             ~baseRevision=committed.revision,
+            ~headers=options.current.requestHeaders(),
             ~from=
               RouterNavigationCache.sendsPatchBase(
                 cache,
@@ -1004,6 +1026,7 @@ module Provider = {
           ~registryFingerprint,
           ~requestId,
           ~baseRevision=committed.revision,
+          ~headers=options.current.requestHeaders(),
           ~from=None,
           ~prefetch=request.trigger,
           ~target=request.url,

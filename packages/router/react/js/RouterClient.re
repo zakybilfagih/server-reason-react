@@ -61,6 +61,7 @@ let fetch =
       ~baseRevision,
       ~from,
       ~prefetch=?,
+      ~headers=[],
       ~target,
       (),
     ) => {
@@ -73,9 +74,16 @@ let fetch =
     ),
     ("Router-Base-Revision", baseRevision),
   |];
+  let isRouterHeader = name => {
+    let name = String.lowercase_ascii(name);
+    name == "accept" || String.starts_with(~prefix="router-", name);
+  };
   let headers =
     Fetch.HeadersInit.makeWithArray(
       Array.concat([
+        headers
+        |> List.filter(((name, _)) => !isRouterHeader(name))
+        |> Array.of_list,
         baseHeaders,
         switch (from) {
         | Some(from) => [|("Router-Navigation-From", from)|]

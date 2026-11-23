@@ -47,6 +47,18 @@ type invalidation =
   | All
   | Prefix(RouterRuntime.destination);
 
+/** Headers that every navigation and prefetch request of a [Provider] below
+    adds, read when the request starts. It lets loaders see client state, for
+    example which queries the browser already has. Headers the router sends
+    itself, such as [Accept] and [Router-*], keep the router's values. On the
+    server it renders [children]. */
+module RequestHeaders: {
+  [@react.component]
+  let make:
+    (~value: unit => list((string, string)), ~children: React.element) =>
+    React.element;
+};
+
 module Provider: {
   [@react.component]
   let make:

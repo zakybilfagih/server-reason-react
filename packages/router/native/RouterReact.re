@@ -56,6 +56,15 @@ let context: React.Context.t(option(contextValue)) =
   React.createContext(None);
 let provider = React.Context.provider(context);
 
+module RequestHeaders = {
+  [@react.component]
+  let make =
+      (
+        ~value as _: unit => list((string, string)),
+        ~children: React.element,
+      ) => children;
+};
+
 module Provider = {
   [@react.component]
   let make =

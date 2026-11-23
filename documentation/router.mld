@@ -439,6 +439,25 @@ the status became [Failed] or [FullLoad] when the client loaded the target as
 a document. A canceled or superseded navigation is not an error. The handler
 is for development tools; the router behaves the same without it.
 
+{3 Request headers}
+
+[RouterReact.RequestHeaders] adds headers to every navigation and prefetch
+request of the [Provider] below it. Its [~value] is called when each request
+starts, so loaders can read client state through [DreamRouter.request ()],
+for example which queries the browser already has:
+
+{[
+<RouterReact.RequestHeaders value={() => [("Query-Cache", hashes())]}>
+  children
+</RouterReact.RequestHeaders>
+]}
+
+Render it from a client component above the client root, such as one that
+wraps the [children] of the [document] given to the adapter. Headers the
+router sends itself, [Accept] and any [Router-*] header, keep the router's
+values. A response the navigation cache keeps was made with the headers of
+its request. On the server, [RequestHeaders] renders its [children].
+
 {3 Navigation cache}
 
 [RouterReact.Provider ~pageCacheCapacity] keeps the navigation responses of
